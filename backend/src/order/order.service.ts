@@ -37,6 +37,7 @@ export class OrderService {
   async findById(id: number): Promise<Order | null> {
     const order = await this.orderRepository.findOne({
       where: { id },
+      order: [['delivery', 'dateDelivery', 'ASC']],
       include: this.include,
     });
 
