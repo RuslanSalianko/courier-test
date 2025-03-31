@@ -35,7 +35,10 @@ export class OrderService {
   }
 
   async findById(id: number): Promise<Order | null> {
-    const order = await this.orderRepository.findByPk(id);
+    const order = await this.orderRepository.findOne({
+      where: { id },
+      include: this.include,
+    });
 
     if (!order) {
       throw new NotFoundException(ERROR_ORDER_NOT_FOUND);
