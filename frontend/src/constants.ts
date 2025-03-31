@@ -17,4 +17,4 @@ export const ORDER_STATUS: { [key in keyof typeof EOrderStatus]: string } = {
   COMPLETE: 'Завершен',
 };
 
-export const ERROR_PAGE = '<h3>Ошибка загрузки</h3>';
+export const ERROR_PAGE = 'Ошибка загрузки';
